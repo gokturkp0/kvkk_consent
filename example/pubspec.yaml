@@ -1,0 +1,18 @@
+name: kvkk_consent_example
+description: Minimal demo of kvkk_consent.
+publish_to: none
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+  kvkk_consent:
+    path: ../
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
