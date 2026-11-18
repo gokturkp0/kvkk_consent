@@ -1,0 +1,18 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          # Pinned so `dart format` and lints match local runs.
+          flutter-version: 3.47.9
+      - run: flutter pub get
+      - run: ./tool/check.sh
