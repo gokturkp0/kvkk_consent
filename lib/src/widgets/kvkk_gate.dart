@@ -6,8 +6,12 @@ import 'kvkk_consent_page.dart';
 import 'kvkk_notice_page.dart';
 
 /// Shows notice → consent → [child], skipping steps already done.
-/// Call `controller.load()` before or while building this.
+///
+/// Users who refuse every purpose still reach [child]: using the app is
+/// never made conditional on consent. Call `controller.load()` before or
+/// while building this; a progress indicator is shown until it completes.
 class KvkkGate extends StatelessWidget {
+  /// Creates a gate in front of [child].
   const KvkkGate({
     super.key,
     required this.controller,
@@ -15,8 +19,13 @@ class KvkkGate extends StatelessWidget {
     this.strings = KvkkStrings.tr,
   });
 
+  /// Decides which step to show and records the user's answers.
   final KvkkConsentController controller;
+
+  /// UI labels passed to both screens. Defaults to Turkish.
   final KvkkStrings strings;
+
+  /// The app content shown once the notice and consent steps are done.
   final Widget child;
 
   @override

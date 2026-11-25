@@ -8,7 +8,10 @@ import '../strings.dart';
 /// "Save" have the same visual weight on purpose (no dark patterns).
 ///
 /// Can be opened again later from app settings to change or withdraw.
+/// Both buttons call [KvkkConsentController.saveConsents]; "Reject all"
+/// passes no choices, so every purpose is recorded as refused.
 class KvkkConsentPage extends StatefulWidget {
+  /// Creates the consent screen for [controller].
   const KvkkConsentPage({
     super.key,
     required this.controller,
@@ -16,8 +19,14 @@ class KvkkConsentPage extends StatefulWidget {
     this.onDone,
   });
 
+  /// Provides the purposes and records the decisions.
   final KvkkConsentController controller;
+
+  /// UI labels. Defaults to Turkish.
   final KvkkStrings strings;
+
+  /// Called after the decisions are saved, e.g. to pop the route when
+  /// opened from settings. Not needed inside `KvkkGate`.
   final VoidCallback? onDone;
 
   @override

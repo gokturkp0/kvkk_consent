@@ -3,12 +3,9 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   exclude:
     - build/**
-    - android/**
-    - ios/**
-    - web/**
-    - windows/**
-    - macos/**
-    - linux/**
+    - doc/api/**
 
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
+linter:
+  rules:
+    # Every public API member must have a dartdoc comment.
+    public_member_api_docs: true

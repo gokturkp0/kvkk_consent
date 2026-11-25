@@ -5,7 +5,11 @@ import '../strings.dart';
 
 /// Shows the aydınlatma metni. It informs only: there is deliberately no
 /// "I accept" wording and no checkbox here (consent is a separate step).
+///
+/// Tapping the button calls [KvkkConsentController.acknowledgeNotice],
+/// which grants no consent.
 class KvkkNoticePage extends StatelessWidget {
+  /// Creates the notice screen for [controller].
   const KvkkNoticePage({
     super.key,
     required this.controller,
@@ -13,8 +17,14 @@ class KvkkNoticePage extends StatelessWidget {
     this.onDone,
   });
 
+  /// Provides the notice text and records the acknowledgement.
   final KvkkConsentController controller;
+
+  /// UI labels. Defaults to Turkish.
   final KvkkStrings strings;
+
+  /// Called after the acknowledgement is saved, e.g. to pop the route.
+  /// Not needed inside `KvkkGate`, which reacts to the controller.
   final VoidCallback? onDone;
 
   @override

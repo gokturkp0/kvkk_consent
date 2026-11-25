@@ -2,15 +2,25 @@ import 'dart:convert';
 
 import 'models.dart';
 
-/// Where consent records live. The package ships no storage dependency;
-/// plug in shared_preferences, secure storage or a backend yourself.
+/// Where consent records live.
+///
+/// The package ships no storage dependency; plug in shared_preferences,
+/// secure storage or a backend yourself. Implementations must persist the
+/// whole list they are given and return it unchanged from [load].
 abstract interface class ConsentStore {
+  /// Returns all stored records, oldest first. Empty if nothing is stored.
   Future<List<ConsentRecord>> load();
+
+  /// Replaces the stored records with [records]. Records are only ever
+  /// appended by the controller, so [records] always contains every
+  /// previously saved record.
   Future<void> save(List<ConsentRecord> records);
 }
 
-/// Keeps records in memory. Useful for tests and demos only.
+/// Keeps records in memory. Useful for tests and demos only: everything is
+/// lost when the app restarts.
 class InMemoryConsentStore implements ConsentStore {
+  /// Creates a store, optionally pre-filled with [initial] records.
   InMemoryConsentStore([List<ConsentRecord>? initial])
     : _records = [...?initial];
 
@@ -34,9 +44,13 @@ class InMemoryConsentStore implements ConsentStore {
 /// );
 /// ```
 class JsonStringConsentStore implements ConsentStore {
+  /// Creates a store backed by [read] and [write].
   JsonStringConsentStore({required this.read, required this.write});
 
+  /// Returns the stored JSON string, or null if nothing was stored yet.
   final Future<String?> Function() read;
+
+  /// Persists the given JSON string, replacing any previously stored one.
   final Future<void> Function(String value) write;
 
   @override
