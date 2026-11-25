@@ -2,6 +2,7 @@ name: kvkk_consent
 description: "Minimal KVKK (Turkish data protection law) privacy notice and explicit consent flow for Flutter, with versioned append-only consent records."
 version: 0.1.0
 repository: https://github.com/gokturkp0/kvkk_consent
+issue_tracker: https://github.com/gokturkp0/kvkk_consent/issues
 topics: [kvkk, consent, privacy, gdpr, turkey]
 
 screenshots:
