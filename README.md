@@ -3,6 +3,12 @@
 [![ci](https://github.com/gokturkp0/kvkk_consent/actions/workflows/ci.yml/badge.svg)](https://github.com/gokturkp0/kvkk_consent/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+<p>
+  <img src="doc/screenshots/notice.png" alt="Aydınlatma ekranı" width="260">
+  &nbsp;
+  <img src="doc/screenshots/consent.png" alt="Açık rıza ekranı" width="260">
+</p>
+
 Flutter uygulamaları için küçük, bağımlılıksız bir **KVKK aydınlatma + açık
 rıza** akışı.
 
@@ -18,7 +24,29 @@ rıza** akışı.
 > değildir. Aydınlatma metninizi ve rıza amaçlarınızı kendi veri işleme
 > faaliyetlerinize göre hazırlayın.
 
+## Neden bu paket?
+
+KVKK'da aydınlatma ile açık rıza ayrı şeylerdir: kullanıcı önce
+bilgilendirilir, açık rıza ise belirli bir konuya ilişkin, bilgilendirmeye
+dayanan ve özgür iradeyle açıklanan bir onaydır. Bu yüzden rıza her amaç için
+ayrı alınmalı ve reddetmek mümkün olmalıdır. Buna rağmen pek çok uygulama
+bunu tek bir "Okudum, kabul ediyorum" kutusuyla geçiştirir; bu paket iki
+adımı ayrı tutan hazır bir akış sunar.
+
 ## Kurulum
+
+```yaml
+dependencies:
+  kvkk_consent: ^0.1.0
+```
+
+ya da:
+
+```bash
+flutter pub add kvkk_consent
+```
+
+### Geliştirme sürümü için
 
 ```yaml
 dependencies:
@@ -53,14 +81,38 @@ runApp(MaterialApp(
   home: KvkkGate(controller: kvkk, child: const HomePage()),
 ));
 
-// Bir analitik SDK'sını başlatmadan önce:
-if (kvkk.isGranted('analytics')) { /* ... */ }
+// Kampanya e-postası göndermeden önce:
+if (kvkk.isGranted('marketing')) { /* ... */ }
 ```
 
 Tercihleri sonradan değiştirmek için ayarlardan `KvkkConsentPage` açın.
 İngilizce arayüz için `strings: KvkkStrings.en` verin.
 
 Çalışan örnek: [`example/lib/main.dart`](example/lib/main.dart).
+
+## SSS
+
+**GDPR için kullanılabilir mi?**
+Paket KVKK için tasarlandı. Akışın yapısı (ayrı bilgilendirme, amaç bazlı ve
+varsayılanı kapalı rıza, kayıt geçmişi) başka düzenlemeler için de başlangıç
+olabilir; ancak GDPR'ye özgü bir mod ya da hazır metin yoktur ve uyum
+değerlendirmesi size aittir.
+
+**Rıza kayıtlarını sunucuya nasıl gönderirim?**
+Paket hiçbir veriyi kendisi göndermez. İki yol var: kendi `ConsentStore`
+uygulamanızı yazıp `save` içinde sunucunuza gönderin ya da
+`kvkk.exportJson()` çıktısını kendiniz iletin.
+
+**Aydınlatma metnini değiştirince ne olur?**
+`noticeVersion` (rıza metinleri için `consentVersion`) değerini artırın.
+Eski sürüme ait kayıtlar geçerli sayılmaz ve kullanıcıya yeniden sorulur;
+eski kayıtlar geçmişte kalır.
+
+## Kullananlar
+
+Henüz kimse eklenmedi.
+
+Paketi kullanıyorsanız bu listeye PR ile ekleyin.
 
 ## Geliştirme
 
