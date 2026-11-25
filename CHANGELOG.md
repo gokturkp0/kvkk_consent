@@ -11,3 +11,5 @@
   "Kullananlar" bölümleri.
 - Katkı rehberi (`CONTRIBUTING.md`), issue ve PR şablonları.
 - pub.dev için ekran görüntüleri ve `issue_tracker` alanı.
+- İngilizce belgeler: `README.en.md`, README ve `CONTRIBUTING.md` başında
+  İngilizce özet, iki dilli issue şablonları.

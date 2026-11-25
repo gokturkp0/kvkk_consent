@@ -3,6 +3,13 @@
 [![ci](https://github.com/gokturkp0/kvkk_consent/actions/workflows/ci.yml/badge.svg)](https://github.com/gokturkp0/kvkk_consent/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+**Türkçe** · [English](README.en.md)
+
+> **In English:** A dependency-free Flutter flow that shows the KVKK (Turkish
+> data protection law) privacy notice and per-purpose explicit consent on
+> separate screens, and keeps a versioned, append-only consent history.
+> Full English documentation: [README.en.md](README.en.md).
+
 <p>
   <img src="doc/screenshots/notice.png" alt="Aydınlatma ekranı" width="260">
   &nbsp;

@@ -1,6 +1,6 @@
 ---
-name: Hata bildirimi
-about: Paketin beklenmedik davrandığı bir durumu bildir
+name: Hata bildirimi / Bug report
+about: Paketin beklenmedik davrandığı bir durumu bildir (English is welcome)
 labels: bug
 ---
 

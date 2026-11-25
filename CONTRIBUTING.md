@@ -1,5 +1,13 @@
 # Katkı rehberi
 
+> **English summary:** Open an issue before large changes. Run
+> `./tool/check.sh` (format, analyze, test) before every PR; CI runs the same
+> script. Do not add dependencies. Respect the invariants and scope listed in
+> [`AGENTS.md`](AGENTS.md) (in Turkish; the code itself is documented in
+> English). Add tests for new behavior, `///` docs for new public API, and a
+> `CHANGELOG.md` entry for user-facing changes. Issues and PRs in English are
+> welcome.
+
 Katkın için teşekkürler! Bu paket bilerek küçük tutuluyor; büyük bir
 değişikliğe başlamadan önce bir issue açıp fikrini paylaşırsan zaman kaybını
 önlemiş oluruz.

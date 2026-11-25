@@ -71,4 +71,5 @@ Biçim, analiz ve testleri çalıştırır. Hepsi geçmeden işi bitmiş sayma.
 
 ## Dil
 Kod, API adları ve kod yorumları İngilizce. Arayüz metinleri TR + EN.
-Bu dosya ve README Türkçe.
+Bu dosya ve `README.md` Türkçe; `README.en.md` aynı içeriğin İngilizcesidir.
+README'de bir şey değiştirirsen İngilizce dosyayı da aynı commit'te güncelle.

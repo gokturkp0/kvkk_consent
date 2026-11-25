@@ -1,6 +1,6 @@
 ---
-name: Özellik talebi
-about: Pakete yeni bir özellik öner
+name: Özellik talebi / Feature request
+about: Pakete yeni bir özellik öner (English is welcome)
 labels: enhancement
 ---
 
