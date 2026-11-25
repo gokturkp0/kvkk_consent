@@ -18,7 +18,7 @@ class KvkkStrings {
 
   /// Turkish labels (default).
   static const tr = KvkkStrings(
-    noticeTitle: 'Kişisel Verilerin Korunması Hakkında Aydınlatma',
+    noticeTitle: 'Aydınlatma Metni',
     noticeContinue: 'Devam et',
     consentTitle: 'Açık Rıza Tercihleriniz',
     consentIntro:

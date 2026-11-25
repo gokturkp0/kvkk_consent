@@ -4,6 +4,12 @@ version: 0.1.0
 repository: https://github.com/gokturkp0/kvkk_consent
 topics: [kvkk, consent, privacy, gdpr, turkey]
 
+screenshots:
+  - description: "Aydınlatma ekranı: yalnızca bilgilendirir, onay kutusu veya 'kabul ediyorum' ifadesi içermez."
+    path: doc/screenshots/notice.png
+  - description: "Açık rıza ekranı: her amaç için ayrı anahtar, hepsi kapalı başlar; reddetmek kaydetmek kadar kolaydır."
+    path: doc/screenshots/consent.png
+
 environment:
   sdk: ^3.13.7
   flutter: ">=3.22.0"

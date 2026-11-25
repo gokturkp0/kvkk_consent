@@ -33,6 +33,7 @@ class KvkkNoticePage extends StatelessWidget {
       appBar: AppBar(title: Text(strings.noticeTitle)),
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
               child: SingleChildScrollView(
