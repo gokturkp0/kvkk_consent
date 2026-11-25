@@ -120,6 +120,8 @@ Paketi kullanıyorsanız bu listeye PR ile ekleyin.
 ./tool/check.sh   # format + analyze + test
 ```
 
+Katkı süreci için [`CONTRIBUTING.md`](CONTRIBUTING.md) dosyasına bakın.
+
 Bu depoda yapay zekâ kodlama ajanlarıyla çalışıyorsanız ajanlar önce
 [`AGENTS.md`](AGENTS.md) dosyasını okur. Bu dosya paketin değişmez kurallarını
 ve dosya haritasını içerir.
