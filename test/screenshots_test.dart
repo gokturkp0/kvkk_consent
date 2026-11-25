@@ -93,13 +93,21 @@ void main() {
   testWidgets('notice screenshot', (tester) async {
     final c = _controller();
     await c.load();
-    await _shoot(tester, KvkkNoticePage(controller: c), 'notice');
+    await _shoot(
+      tester,
+      KvkkNoticePage(controller: c, strings: KvkkStrings.tr),
+      'notice',
+    );
   }, skip: !_enabled);
 
   testWidgets('consent screenshot', (tester) async {
     final c = _controller();
     await c.load();
     await c.acknowledgeNotice();
-    await _shoot(tester, KvkkConsentPage(controller: c), 'consent');
+    await _shoot(
+      tester,
+      KvkkConsentPage(controller: c, strings: KvkkStrings.tr),
+      'consent',
+    );
   }, skip: !_enabled);
 }

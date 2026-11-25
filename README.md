@@ -93,7 +93,17 @@ if (kvkk.isGranted('marketing')) { /* ... */ }
 ```
 
 Tercihleri sonradan değiştirmek için ayarlardan `KvkkConsentPage` açın.
-İngilizce arayüz için `strings: KvkkStrings.en` verin.
+Rıza ekranındaki "Aydınlatma metnini oku" bağlantısı, kullanıcının karar
+verirken aydınlatma metnine yeniden bakabilmesini sağlar.
+
+**Dil:** `strings` verilmezse arayüz dili cihaz diline göre seçilir: Türkçe
+cihazda Türkçe, diğerlerinde İngilizce. Dili sabitlemek ya da uygulamanızın
+kendi dil ayarını kullanmak için `strings: KvkkStrings.tr` (veya `.en`) verin.
+
+**Kayıt sırasında:** düğmeler devre dışı kalır, bu yüzden çift dokunma çift
+kayıt oluşturmaz. `ConsentStore` hata verirse kullanıcıya kısa bir uyarı
+gösterilir, hiçbir şey kaydedilmez ve hata `FlutterError.reportError` ile
+loglarınıza düşer.
 
 Çalışan örnek: [`example/lib/main.dart`](example/lib/main.dart).
 

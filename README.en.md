@@ -24,8 +24,8 @@ Protection Law (Law No. 6698).
   timestamp; when a text version changes, the user is asked again.
 - The full history can be exported as JSON.
 
-The default UI labels are Turkish; English labels ship too
-(`KvkkStrings.en`).
+UI labels ship in Turkish and English and follow the device language by
+default.
 
 > ⚠️ This package is **infrastructure** for compliance, not legal advice and not
 > a compliance guarantee. Write your privacy notice and consent purposes based
@@ -98,7 +98,16 @@ if (kvkk.isGranted('marketing')) { /* ... */ }
 ```
 
 To let users change their choices later, open `KvkkConsentPage` from your
-settings screen.
+settings screen. Its "Read the privacy notice" link lets users look at the
+notice again while deciding.
+
+**Language:** without `strings`, labels follow the device language: Turkish
+on Turkish devices, English everywhere else. Pass `strings: KvkkStrings.tr`
+(or `.en`) to pin a language or to follow your app's own language setting.
+
+**While saving:** buttons are disabled, so a double tap never records twice.
+If the `ConsentStore` fails, the user sees a short message, nothing is
+recorded, and the error reaches your logs through `FlutterError.reportError`.
 
 Working example: [`example/lib/main.dart`](example/lib/main.dart).
 

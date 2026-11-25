@@ -23,7 +23,7 @@ yeni bağımlılıklar.
 | `lib/src/consent_store.dart` | `ConsentStore` arayüzü, `InMemoryConsentStore`, `JsonStringConsentStore`. |
 | `lib/src/consent_controller.dart` | Tüm iş kuralları. Durum kayıtlardan türetilir. |
 | `lib/src/strings.dart` | `KvkkStrings.tr` / `.en` arayüz metinleri. |
-| `lib/src/widgets/` | `KvkkNoticePage`, `KvkkConsentPage`, `KvkkGate`. Mantık içermez, controller'ı çağırır. |
+| `lib/src/widgets/` | `KvkkNoticePage`, `KvkkConsentPage`, `KvkkGate`. Mantık içermez, controller'ı çağırır. `common.dart` dışa aktarılmaz: ortak `NoticeBody` ve kayıt sırasında hata gösteren `runSave`. |
 | `test/` | Kurallar `consent_controller_test.dart`, ekran akışı `widgets_test.dart`. |
 | `example/lib/main.dart` | Çalışan en küçük örnek. |
 

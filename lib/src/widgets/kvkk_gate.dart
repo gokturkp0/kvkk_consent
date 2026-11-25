@@ -16,14 +16,15 @@ class KvkkGate extends StatelessWidget {
     super.key,
     required this.controller,
     required this.child,
-    this.strings = KvkkStrings.tr,
+    this.strings,
   });
 
   /// Decides which step to show and records the user's answers.
   final KvkkConsentController controller;
 
-  /// UI labels passed to both screens. Defaults to Turkish.
-  final KvkkStrings strings;
+  /// UI labels passed to both screens. When null, each screen picks them
+  /// from the device language via [KvkkStrings.of].
+  final KvkkStrings? strings;
 
   /// The app content shown once the notice and consent steps are done.
   final Widget child;
