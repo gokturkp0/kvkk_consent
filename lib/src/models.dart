@@ -1,10 +1,12 @@
 import 'package:flutter/foundation.dart';
 
 /// A single processing purpose that needs explicit consent (açık rıza),
-/// e.g. marketing messages or transferring data abroad.
+/// e.g. personalised recommendations.
 ///
 /// Each purpose is asked for separately; consent for one purpose never
-/// implies consent for another.
+/// implies consent for another. Only add processing that actually relies on
+/// explicit consent; processing based on another legal ground belongs in the
+/// notice only.
 @immutable
 class ConsentPurpose {
   /// Creates a purpose. [id] must be unique within a [KvkkConfig].
@@ -56,8 +58,10 @@ class KvkkConfig {
   /// descriptions). Changing it asks every user again for every purpose.
   final String consentVersion;
 
-  /// Purposes that need explicit consent. May be empty if the app only
-  /// needs a privacy notice.
+  /// Purposes that rely on explicit consent. Do not list processing based on
+  /// another legal ground (e.g. performing a contract): describe it in
+  /// [noticeText] instead. May be empty, in which case only the notice is
+  /// shown.
   final List<ConsentPurpose> purposes;
 }
 

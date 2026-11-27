@@ -27,18 +27,26 @@ rıza** akışı.
   sürümü değişince kullanıcıya yeniden sorulur.
 - Geçmiş JSON olarak dışa aktarılabilir.
 
-> ⚠️ Bu paket uyum için bir **altyapıdır**, hukuki tavsiye ya da uyum garantisi
-> değildir. Aydınlatma metninizi ve rıza amaçlarınızı kendi veri işleme
-> faaliyetlerinize göre hazırlayın.
+> ⚠️ **Önemli:** Bu paket uyum için bir **altyapıdır**; hukuki tavsiye ya da
+> uyum garantisi değildir. README'deki açıklamalar, SSS cevapları, örnek
+> uygulamadaki metinler ve rıza amaçları **yalnızca örnek** amacıyla verilmiştir.
+> Aydınlatma metninizi, rıza amaçlarınızı ve hangi işlemin hangi hukuki sebebe
+> dayandığını kendi veri işleme faaliyetlerinize göre, **bir avukata ya da
+> kişisel verilerin korunması alanında yetkili bir uzmana danışarak**
+> hazırlayın. Paketin kullanımından doğan hukuki sorumluluk veri sorumlusuna
+> aittir.
 
 ## Neden bu paket?
 
 KVKK'da aydınlatma ile açık rıza ayrı şeylerdir: kullanıcı önce
-bilgilendirilir, açık rıza ise belirli bir konuya ilişkin, bilgilendirmeye
-dayanan ve özgür iradeyle açıklanan bir onaydır. Bu yüzden rıza her amaç için
-ayrı alınmalı ve reddetmek mümkün olmalıdır. Buna rağmen pek çok uygulama
-bunu tek bir "Okudum, kabul ediyorum" kutusuyla geçiştirir; bu paket iki
-adımı ayrı tutan hazır bir akış sunar.
+bilgilendirilir, açık rıza ise Kanun'un 3. maddesindeki tanımıyla "belirli bir
+konuya ilişkin, bilgilendirilmeye dayanan ve özgür iradeyle açıklanan rıza"dır.
+Bu yüzden rıza her amaç için ayrı alınmalı ve reddetmek mümkün olmalıdır.
+Kişisel Verileri Koruma Kurulu'nun
+[2026/347 sayılı ilke kararı](https://www.kvkk.gov.tr/Icerik/8710/veri-sorumlulari-tarafindan-acik-riza-ve-aydinlatma-metinlerinin-ayri-ayri-duzenlenmesi-gerektigi-hakkinda-kisisel-verileri-koruma-kurulunun-18-02-2026-tarihli-ve-2026-347-sayili-ilke-kararina-iliskin-kamuoyu-duyurusu)
+da aydınlatma metni ile açık rıza metninin ayrı hazırlanması gerektiğini
+hatırlatır. Buna rağmen pek çok uygulama bunu tek bir "Okudum, kabul ediyorum"
+kutusuyla geçiştirir; bu paket iki adımı ayrı tutan hazır bir akış sunar.
 
 ## Kurulum
 
@@ -108,6 +116,29 @@ loglarınıza düşer.
 Çalışan örnek: [`example/lib/main.dart`](example/lib/main.dart).
 
 ## SSS
+
+**`purposes` listesine hangi işlemleri eklemeliyim?**
+Yalnızca açık rızaya dayanan işlemleri. Bir işlem başka bir hukuki sebebe
+dayanıyorsa (örneğin sözleşmenin ifası ya da kanuni yükümlülük), onu aydınlatma
+metninde anlatın ama rıza ekranına eklemeyin; 2026/347 sayılı ilke kararı bu
+durumda ayrıca açık rıza metni sunulmaması gerektiğini belirtir. Açık rızaya
+dayanan hiçbir işleminiz yoksa `purposes` listesini boş bırakın; o zaman
+yalnızca aydınlatma ekranı gösterilir.
+
+**Ticari elektronik ileti (kampanya mesajı) onayı için yeterli mi?**
+Hayır. Ticari elektronik ileti göndermek için 6563 sayılı Kanun kapsamında ayrı
+bir onay gerekir ve bu onaylar İleti Yönetim Sistemi (İYS) üzerinden yönetilir.
+Bu paket İYS ile entegre değildir; yalnızca KVKK kapsamındaki rıza kayıtlarını
+tutar.
+
+**Yurt dışına veri aktarımı için açık rıza alabilir miyim?**
+1 Haziran 2024'te yürürlüğe giren değişiklikle (7499 sayılı Kanun) açık rıza,
+yurt dışına aktarım için yalnızca arızi (düzenli olmayan) aktarımlarda
+kullanılabilen bir yol oldu. Olağan faaliyet akışındaki düzenli aktarımlar
+(örneğin sürekli çalışan bir analitik ya da bulut hizmeti) için yeterlilik
+kararı ya da uygun güvenceler gerekir. Ayrıntılar için Kurum'un
+[yurt dışına aktarım sayfasına](https://www.kvkk.gov.tr/Icerik/2053/Yurtdisina-Aktarim)
+bakın.
 
 **GDPR için kullanılabilir mi?**
 Paket KVKK için tasarlandı. Akışın yapısı (ayrı bilgilendirme, amaç bazlı ve

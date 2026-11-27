@@ -27,19 +27,27 @@ Protection Law (Law No. 6698).
 UI labels ship in Turkish and English and follow the device language by
 default.
 
-> ⚠️ This package is **infrastructure** for compliance, not legal advice and not
-> a compliance guarantee. Write your privacy notice and consent purposes based
-> on your own data processing.
+> ⚠️ **Important:** This package is **infrastructure** for compliance; it is not
+> legal advice and not a compliance guarantee. The explanations in this README,
+> the FAQ answers, and the texts and consent purposes in the example app are
+> **examples only**. Prepare your privacy notice, your consent purposes and the
+> legal ground of each processing activity based on your own data processing,
+> **in consultation with a lawyer or a qualified data protection
+> professional**. Legal responsibility for using the package lies with the data
+> controller.
 
 ## Why this package?
 
 Under KVKK, informing users and obtaining explicit consent are two different
 things: the user is informed first, while explicit consent is defined as
-consent on a specific matter, based on information and given with free will.
-That means consent has to be asked per purpose, and refusing has to be
-possible. Many apps still squeeze this into a single "I have read and accept"
-checkbox; this package gives you a ready-made flow that keeps the two steps
-apart.
+consent on a specific matter, based on information and given with free will
+(Article 3 of the Law). That means consent has to be asked per purpose, and
+refusing has to be possible. The Personal Data Protection Board's
+[principle decision 2026/347](https://www.kvkk.gov.tr/Icerik/8710/veri-sorumlulari-tarafindan-acik-riza-ve-aydinlatma-metinlerinin-ayri-ayri-duzenlenmesi-gerektigi-hakkinda-kisisel-verileri-koruma-kurulunun-18-02-2026-tarihli-ve-2026-347-sayili-ilke-kararina-iliskin-kamuoyu-duyurusu)
+(in Turkish) also states that the privacy notice and the explicit consent text
+must be prepared separately. Many apps still squeeze this into a single "I
+have read and accept" checkbox; this package gives you a ready-made flow that
+keeps the two steps apart.
 
 ## Installation
 
@@ -112,6 +120,29 @@ recorded, and the error reaches your logs through `FlutterError.reportError`.
 Working example: [`example/lib/main.dart`](example/lib/main.dart).
 
 ## FAQ
+
+**Which processing should go into `purposes`?**
+Only processing that relies on explicit consent. If processing is based on
+another legal ground (for example performing a contract or a legal
+obligation), describe it in the privacy notice but do not add it to the
+consent screen; principle decision 2026/347 says no separate consent text
+should be presented in that case. If none of your processing relies on
+explicit consent, leave `purposes` empty and only the notice is shown.
+
+**Is this enough for commercial electronic messages (marketing messages)?**
+No. Sending commercial electronic messages needs a separate approval under Law
+No. 6563, and these approvals are managed through the Message Management
+System (İYS). This package is not integrated with İYS; it only keeps consent
+records under KVKK.
+
+**Can I rely on explicit consent to transfer data abroad?**
+Since the amendment that took effect on 1 June 2024 (Law No. 7499), explicit
+consent is a transfer route only for occasional (non-regular) transfers.
+Regular transfers in the ordinary course of business (for example a
+continuously running analytics or cloud service) need an adequacy decision
+or appropriate safeguards. See the Authority's
+[cross-border transfer page](https://www.kvkk.gov.tr/Icerik/2053/Yurtdisina-Aktarim)
+(in Turkish).
 
 **Can I use it for GDPR?**
 The package is designed for KVKK. Its structure (separate notice, per-purpose

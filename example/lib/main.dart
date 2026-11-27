@@ -16,15 +16,20 @@ String? savedJson;
 final controller = KvkkConsentController(
   config: KvkkConfig(
     noticeText: '''
-Bu metin örnektir, hukuki tavsiye değildir.
+Bu metin yalnızca örnektir, hukuki tavsiye değildir. Kendi metninizi bir avukata ya da yetkili bir uzmana danışarak hazırlayın.
 
 Veri sorumlusu: Örnek Uygulama
-İşlenen veriler: ...
-İşleme amaçları ve hukuki sebepler: ...
-Aktarım: ...
+İşlenen veriler ve işleme amaçları: ...
+Kimlere ve hangi amaçla aktarılabileceği: ...
+Toplama yöntemi ve hukuki sebebi: ...
 KVKK m.11 kapsamındaki haklarınız: ...''',
     noticeVersion: '2026-11-18',
     consentVersion: '2026-11-18',
+    // List only processing that relies on explicit consent. Processing
+    // based on another legal ground (e.g. performing a contract) belongs in
+    // the notice only. Commercial electronic messages also need a separate
+    // approval under Law No. 6563, managed via IYS; this package does not
+    // handle that.
     purposes: const [
       ConsentPurpose(
         id: 'marketing',
@@ -32,11 +37,11 @@ KVKK m.11 kapsamındaki haklarınız: ...''',
         description: 'Kampanya ve duyuruların e-posta ile gönderilmesi.',
       ),
       ConsentPurpose(
-        id: 'analytics_abroad',
-        title: 'Yurt dışına aktarım (analitik)',
+        id: 'personalization',
+        title: 'Kişiselleştirilmiş öneriler',
         description:
-            'Kullanım verilerinin yurt dışındaki analitik '
-            'hizmet sağlayıcısına aktarılması.',
+            'Uygulama içi kullanımınıza göre size özel içerik ve '
+            'kampanya önerileri sunulması.',
       ),
     ],
   ),

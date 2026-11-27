@@ -69,6 +69,19 @@ Biçim, analiz ve testleri çalıştırır. Hepsi geçmeden işi bitmiş sayma.
   (semver; 1.0 öncesi kırıcı değişiklik = minor artışı).
 - `pub publish` komutunu **çalıştırma**; yayın kararı kullanıcınındır.
 
+## Hukuki içerik
+- README, örnek ve dartdoc'a eklenen her hukuki ifadenin bir kaynağı olsun
+  (tercihen kvkk.gov.tr ya da Resmî Gazete). Emin değilsen yazma, kullanıcıya
+  sor. README'lerdeki "yalnızca örnektir, avukata ya da yetkili bir uzmana
+  danışın" uyarısı ve örnek metindeki aynı not kaldırılmaz ya da
+  yumuşatılmaz.
+- Örnek `ConsentPurpose`'lar yalnızca açık rızaya dayanabilecek işlemler
+  olsun. Düzenli yurt dışı aktarımı (7499 sayılı Kanun sonrası açık rıza
+  yalnızca arızi aktarım içindir) ya da başka hukuki sebebe dayanan işlemler
+  örnek amaç olarak kullanılmaz.
+- Ticari elektronik ileti onayı (6563 / İYS) bu paketin kapsamında değildir;
+  bunu karşılıyormuş gibi bir ifade yazma.
+
 ## Dil
 Kod, API adları ve kod yorumları İngilizce. Arayüz metinleri TR + EN.
 Bu dosya ve `README.md` Türkçe; `README.en.md` aynı içeriğin İngilizcesidir.

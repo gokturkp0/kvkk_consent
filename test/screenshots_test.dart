@@ -15,12 +15,12 @@ const _enabled = bool.fromEnvironment('KVKK_SCREENSHOTS');
 KvkkConsentController _controller() => KvkkConsentController(
   config: KvkkConfig(
     noticeText: '''
-Bu metin örnektir, hukuki tavsiye değildir.
+Bu metin yalnızca örnektir, hukuki tavsiye değildir. Kendi metninizi bir avukata ya da yetkili bir uzmana danışarak hazırlayın.
 
 Veri sorumlusu: Örnek Uygulama
-İşlenen veriler: ...
-İşleme amaçları ve hukuki sebepler: ...
-Aktarım: ...
+İşlenen veriler ve işleme amaçları: ...
+Kimlere ve hangi amaçla aktarılabileceği: ...
+Toplama yöntemi ve hukuki sebebi: ...
 KVKK m.11 kapsamındaki haklarınız: ...''',
     noticeVersion: '2026-11-18',
     consentVersion: '2026-11-18',
@@ -31,11 +31,11 @@ KVKK m.11 kapsamındaki haklarınız: ...''',
         description: 'Kampanya ve duyuruların e-posta ile gönderilmesi.',
       ),
       ConsentPurpose(
-        id: 'analytics_abroad',
-        title: 'Yurt dışına aktarım (analitik)',
+        id: 'personalization',
+        title: 'Kişiselleştirilmiş öneriler',
         description:
-            'Kullanım verilerinin yurt dışındaki analitik '
-            'hizmet sağlayıcısına aktarılması.',
+            'Uygulama içi kullanımınıza göre size özel içerik ve '
+            'kampanya önerileri sunulması.',
       ),
     ],
   ),
