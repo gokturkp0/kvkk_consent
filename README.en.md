@@ -3,7 +3,7 @@
 [![ci](https://github.com/gokturkp0/kvkk_consent/actions/workflows/ci.yml/badge.svg)](https://github.com/gokturkp0/kvkk_consent/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-[Türkçe](README.md) · **English** · **[Live demo](https://gokturkp0.github.io/kvkk_consent/)**
+[Türkçe](README.md) · **English**
 
 <p>
   <img src="doc/screenshots/notice.png" alt="Privacy notice screen" width="260">

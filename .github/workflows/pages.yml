@@ -3,9 +3,8 @@ name: pages
 # Builds example/ for the web and publishes it to GitHub Pages:
 # https://gokturkp0.github.io/kvkk_consent/
 # Requires Settings → Pages → Source: "GitHub Actions".
+# Manual only until Pages is enabled; then add:  push: {branches: [main]}
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:

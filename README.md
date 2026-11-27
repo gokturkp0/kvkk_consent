@@ -3,7 +3,7 @@
 [![ci](https://github.com/gokturkp0/kvkk_consent/actions/workflows/ci.yml/badge.svg)](https://github.com/gokturkp0/kvkk_consent/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-**Türkçe** · [English](README.en.md) · **[Canlı demo](https://gokturkp0.github.io/kvkk_consent/)**
+**Türkçe** · [English](README.en.md)
 
 > **In English:** A dependency-free Flutter flow that shows the KVKK (Turkish
 > data protection law) privacy notice and per-purpose explicit consent on

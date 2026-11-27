@@ -25,7 +25,7 @@ yeni bağımlılıklar.
 | `lib/src/strings.dart` | `KvkkStrings.tr` / `.en` arayüz metinleri. |
 | `lib/src/widgets/` | `KvkkNoticePage`, `KvkkConsentPage`, `KvkkGate`. Mantık içermez, controller'ı çağırır. `common.dart` dışa aktarılmaz: ortak `NoticeBody` ve kayıt sırasında hata gösteren `runSave`. |
 | `test/` | Kurallar `consent_controller_test.dart`, ekran akışı `widgets_test.dart`. |
-| `example/lib/main.dart` | Çalışan örnek; `example/web/` ile GitHub Pages demosu olarak yayımlanır (`.github/workflows/pages.yml`). |
+| `example/lib/main.dart` | Çalışan örnek; `example/web/` ile GitHub Pages demosu olarak yayımlanabilir (`.github/workflows/pages.yml`, şimdilik yalnızca elle çalışır; Pages açılınca `push` tetikleyicisi ve README'ye demo bağlantısı eklenecek). |
 
 ## Bozulmaması gereken kurallar (değişmezler)
 Bunlardan biri değişecekse önce kullanıcıya sor; her biri bir testle korunur.
