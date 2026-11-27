@@ -69,6 +69,16 @@ class ExampleApp extends StatelessWidget {
       builder: (context, strings, _) => MaterialApp(
         title: 'kvkk_consent example',
         theme: ThemeData(colorSchemeSeed: Colors.teal),
+        // Keep a phone-like width when the demo runs in a desktop browser.
+        builder: (context, child) => ColoredBox(
+          color: Theme.of(context).colorScheme.surfaceContainerHighest,
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 480),
+              child: child,
+            ),
+          ),
+        ),
         home: KvkkGate(
           controller: controller,
           strings: strings,
